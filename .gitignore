@@ -1,0 +1,12 @@
+# Build artifacts
+target/
+
+# Rust tooling backups
+**/*.rs.bk
+
+# Logs and local state
+*.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
