@@ -2,6 +2,8 @@
 
 Minimal notes for practicing Rust basics and small exercises.
 
+Following along with [this YouTube video](https://www.youtube.com/watch?v=joCFbTJt0o0) and exercises from [Harkirat's rust-problems repo](https://github.com/hkirat/rust-problems).
+
 ## Quick Start
 
 - Install the Rust toolchain via `rustup` (includes `cargo` and `rustc`).
