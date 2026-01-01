@@ -3,6 +3,7 @@ mod utils;
 
 use crate::rect::Rect;
 use crate::utils::{fib, find_first_a, read_from_file_custom};
+use chrono::Local;
 
 fn main() {
     // even function
@@ -53,6 +54,10 @@ fn main() {
         Ok(content) => println!("file content is {}", content),
         Err(e) => println!("error occurred: {}", e),
     }
+
+    //using external crate
+    let local_time = Local::now();
+    println!("local time is {}", local_time);
 }
 
 fn get_str_len(s: String) -> usize {
