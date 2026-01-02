@@ -1,5 +1,7 @@
+mod hashmaps;
 mod vectors;
 
+use crate::hashmaps::group_values_by_key;
 use crate::vectors::even_filter;
 
 fn main() {
@@ -12,7 +14,14 @@ fn main() {
 
     let ans = even_filter(&v);
     println!("vector is {:?}", ans);
-
-    // cannot do this because ownership of v is given to even_filter
     println!("vector is {:?}", v);
+
+    // map example
+    let pairs = vec![
+        (String::from('a'), 10),
+        (String::from('b'), 20),
+        (String::from('a'), 30),
+    ];
+    let map = group_values_by_key(pairs);
+    println!("hashmap is {:?}", map);
 }
