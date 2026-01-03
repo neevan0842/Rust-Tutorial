@@ -12,12 +12,14 @@ pub fn run_multithreading_example() {
         println!("{i} from main thread");
     }
 
+    // Wait for the spawned thread to finish
     handle.join().unwrap();
 }
 
 pub fn demonstrate_move_ownership() {
     let v = vec![1, 2, 3];
 
+    // Move ownership of v to the new thread
     let handle = thread::spawn(move || {
         println!("Vector in spawned thread: {:?}", v);
     });
@@ -30,6 +32,7 @@ pub fn demonstrate_move_ownership() {
 
 // find sum of numbers from 0 to 10^10 using multithreading
 pub fn sum_large_range() -> u128 {
+    // mpsc: multiple producer, single consumer
     let (tx, rx) = mpsc::channel();
 
     for i in 0..1000 {
@@ -43,7 +46,7 @@ pub fn sum_large_range() -> u128 {
         });
     }
 
-    // Drop the original transmitter to avoid hanging
+    // Drop the original transmitter to avoid hanging otherwise the receiver will wait forever for tx to finish
     drop(tx);
 
     let mut total_sum: u128 = 0;

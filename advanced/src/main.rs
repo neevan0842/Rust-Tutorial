@@ -36,6 +36,7 @@ fn find_largest<T: std::cmp::PartialOrd>(a: T, b: T) -> T {
     if a > b { a } else { b }
 }
 
+// Define a trait with a default implementation similar to interfaces in other languages
 trait Summary {
     // Default implementation of summarize
     fn summarize(&self) -> String {
@@ -48,6 +49,7 @@ struct User {
     age: i16,
 }
 
+// similar to implementing an interface in other languages
 impl Summary for User {
     // Custom implementation of summarize for User
     fn summarize(&self) -> String {
