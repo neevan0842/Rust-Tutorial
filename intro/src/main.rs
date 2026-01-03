@@ -73,12 +73,14 @@ fn is_even(num: i32) -> bool {
 }
 
 #[derive(Debug)]
+#[allow(dead_code)]
 enum Shape {
     Circle,
     Square,
 }
 
 #[derive(Debug)]
+#[allow(dead_code)]
 enum ShapeWithValues {
     Circle(f64),
     Rectangle(f64, f64),
